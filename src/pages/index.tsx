@@ -1,3 +1,11 @@
+import { LatestPosts } from '@/components/pages/home/latest-posts';
+
 export default function Home() {
-  return <main>Home</main>;
+  return (
+    <>
+      <section>
+        <LatestPosts />
+      </section>
+    </>
+  );
 }
