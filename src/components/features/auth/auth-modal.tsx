@@ -67,7 +67,9 @@ export const AuthModal: FC<AuthModalProps> = props => {
           <h2 className='text-center text-3xl'>
             {auth === 'signIn' ? 'Welcome back' : 'Join Medium'}
           </h2>
-          <div className='flex flex-col gap-4'>{<AuthLinks />}</div>
+          <div className='flex flex-col gap-4'>
+            {<AuthLinks handleCloseModal={handleCloseModal} />}
+          </div>
 
           <Button type='button' variant={'link'} onClick={switchAuthType}>
             {auth === 'signIn'
