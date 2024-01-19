@@ -8,5 +8,5 @@ interface UserPostProps {
 export const UserPost: FC<UserPostProps> = props => {
   const { post } = props;
 
-  return <div></div>;
+  return <div>{post.author.fullName}</div>;
 };

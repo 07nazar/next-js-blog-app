@@ -15,7 +15,7 @@ export const UserInfo: FC<UserInfoProps> = props => {
       <h1>{fullName}</h1>
       <div>
         {posts.map(post => {
-          return <UserPost key={post.id} />;
+          return <UserPost post={post} key={post.id} />;
         })}
       </div>
     </div>

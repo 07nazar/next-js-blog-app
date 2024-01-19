@@ -36,15 +36,14 @@ const links = [
   {
     provider: 'email',
     Icon: Mail,
-    callBackHrefSignIn: '/login',
-    callBackHrefSignUp: '/register',
+    callBackHrefSignIn: '/signIn',
+    callBackHrefSignUp: '/signUp',
   },
 ];
 
 export const AuthLinks: FC<AuthLinksProps> = props => {
   const { query: routerQuery } = useRouter();
   const { handleCloseModal } = props;
-
   const { auth } = routerQuery as { auth: 'signIn' | 'signUp' };
 
   return links.map((link, index) => (

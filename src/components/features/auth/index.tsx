@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { FC, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
 import { AuthModal } from './auth-modal';
 import { useRouter } from 'next/router';
 
@@ -9,7 +9,7 @@ interface AuthProps {
 
 export const Auth: FC<AuthProps> = props => {
   const [isOpen, setOpen] = useState<boolean>(false);
-  const { pathname, push, query } = useRouter();
+  const { pathname, push } = useRouter();
 
   const { type } = props;
 

@@ -8,11 +8,9 @@ export type TypeAuthResponse = {
   };
 };
 
-export type TypeRegisterPayload = {
+export type TypeRegisterPayload = TypeLoginPayload & {
   firstName: string;
   lastName: string;
-  password: string;
-  email: string;
 };
 
 export type TypeLoginPayload = {
