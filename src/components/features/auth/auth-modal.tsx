@@ -15,7 +15,7 @@ export const AuthModal: FC<AuthModalProps> = props => {
   const modalRef = useRef<HTMLDivElement | null>(null);
   const dataState = isOpen ? 'open' : 'close';
 
-  const { pathname, push, query, replace } = useRouter();
+  const { pathname, push, query } = useRouter();
 
   const { auth } = query as { auth: 'signIn' | 'signUp' };
 
@@ -31,10 +31,6 @@ export const AuthModal: FC<AuthModalProps> = props => {
 
   const handleCloseModal = () => {
     setOpen(false);
-    replace({
-      pathname,
-      query: null,
-    });
   };
 
   useEffect(() => {
@@ -57,7 +53,7 @@ export const AuthModal: FC<AuthModalProps> = props => {
         ref={modalRef}
         data-state={dataState}
         className='modal absolute-center w-full max-w-[500px] bg-background'>
-        <form className='relative flex flex-col gap-5 p-5'>
+        <div className='relative flex flex-col gap-5 p-5'>
           <button
             type='button'
             className='absolute right-5 top-5'
@@ -76,7 +72,7 @@ export const AuthModal: FC<AuthModalProps> = props => {
               ? 'No account? Create one'
               : 'Already have an account? Sign in'}
           </Button>
-        </form>
+        </div>
       </div>
     </div>
   );
